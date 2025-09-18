@@ -1,0 +1,113 @@
+/* Estilos modernos y agradables para la app de pedidos */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f6f8fa;
+  margin: 0;
+  color: #222;
+}
+.main-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.dashboard {
+  flex: 1 1 auto;
+  max-width: 1200px;
+  min-width: 320px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px #0001;
+  padding: 2rem 2.5rem 2.5rem 2.5rem;
+  width: 95vw;
+}
+@media (max-width: 700px) {
+  .dashboard {
+    padding: 1rem 0.5rem;
+    width: 100vw;
+  }
+}
+h1, h2, h3, h4, h5 {
+  color: #2a4d7a;
+  margin-top: 0;
+}
+.pedido-item {
+  border: 1px solid #e0e6ed;
+  border-radius: 8px;
+  margin-bottom: 1.2rem;
+  padding: 1rem 1.5rem;
+  background: #f9fbfd;
+  transition: box-shadow .2s;
+}
+.pedido-item:hover {
+  box-shadow: 0 2px 8px #2a4d7a22;
+}
+.pedido-item ul {
+  padding-left: 1.2rem;
+}
+.pedido-item select {
+  margin-left: 1rem;
+}
+.estadisticas-pedidos {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  background: #eaf1fb;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+}
+.estadisticas-pedidos p {
+  margin: 0;
+}
+form {
+  background: #f1f7ff;
+  border-radius: 8px;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 4px #2a4d7a11;
+}
+form input, form select {
+  margin: 0.3rem 0.7rem 0.3rem 0;
+  padding: 0.4rem 0.7rem;
+  border-radius: 4px;
+  border: 1px solid #b3c6e0;
+  font-size: 1rem;
+}
+form button {
+  background: #2a4d7a;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1.2rem;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background .2s;
+}
+form button:hover {
+  background: #1a2d4a;
+}
+.nav {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  background: #eaf1fb;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 1px 4px #2a4d7a11;
+  width: 95vw;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.nav a {
+  color: #2a4d7a;
+  text-decoration: none;
+  font-weight: 500;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: border .2s;
+}
+.nav a.active {
+  border-bottom: 2px solid #2a4d7a;
+}
