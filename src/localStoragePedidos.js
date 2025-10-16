@@ -1,6 +1,9 @@
-// Utilidades para persistir pedidos en localStorage
 export function guardarPedidos(orders) {
-  localStorage.setItem('orders', JSON.stringify(orders))
+  try {
+    localStorage.setItem('orders', JSON.stringify(orders))
+  } catch (e) {
+    console.error('Error guardando pedidos en localStorage:', e)
+  }
 }
 
 export function leerPedidos() {
@@ -8,8 +11,16 @@ export function leerPedidos() {
   if (!data) return null
   try {
     const arr = JSON.parse(data)
-    // Convertir fechas a objetos Date
-    return arr.map(o => ({ ...o, date: new Date(o.date) }))
+    // Convertir fechas de statusHistory a objetos Date
+    return arr.map(o => ({
+      ...o,
+      statusHistory: Array.isArray(o.statusHistory)
+        ? o.statusHistory.map(h => ({
+            ...h,
+            date: new Date(h.date)
+          }))
+        : [],
+    }))
   } catch {
     return null
   }
