@@ -1,83 +1,116 @@
-/* Estilos modernos y agradables para la app de pedidos */
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: #f6f8fa;
+  font-family: var(--font-main);
+  background: var(--color-bg-light);
+  color: var(--color-text-light);
   margin: 0;
-  color: #222;
+  transition: var(--transition);
 }
+
 .main-layout {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  background: var(--color-bg-light);
+  transition: var(--transition);
 }
+
 .dashboard {
   flex: 1 1 auto;
-  max-width: 1200px;
-  min-width: 320px;
-  margin: 2rem auto;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 2px 16px #0001;
-  padding: 2rem 2.5rem 2.5rem 2.5rem;
-  width: 95vw;
+  width: 100%;
+  max-width: 700px;
+  margin: 2.5rem auto;
+  background: var(--color-surface-light);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2.5rem 2rem 2.5rem 2rem;
+  transition: var(--transition);
 }
-@media (max-width: 700px) {
+
+@media (max-width: 800px) {
   .dashboard {
-    padding: 1rem 0.5rem;
-    width: 100vw;
+    padding: 1.2rem 0.5rem;
+    width: 98vw;
   }
 }
+
 h1, h2, h3, h4, h5 {
-  color: #2a4d7a;
+  color: var(--color-primary-light);
   margin-top: 0;
+  font-family: var(--font-main);
+  letter-spacing: -0.5px;
 }
+
 .pedido-item {
-  border: 1px solid #e0e6ed;
-  border-radius: 8px;
-  margin-bottom: 1.2rem;
-  padding: 1rem 1.5rem;
-  background: #f9fbfd;
-  transition: box-shadow .2s;
+  border: 1px solid var(--color-muted-light);
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+  padding: 1.2rem 1.5rem;
+  background: var(--color-muted-light);
+  box-shadow: 0 2px 8px #2563eb11;
+  transition: box-shadow .2s, background .2s;
 }
 .pedido-item:hover {
-  box-shadow: 0 2px 8px #2a4d7a22;
+  box-shadow: 0 4px 16px #2563eb22;
+  background: #eaf1fb;
 }
+
 .pedido-item ul {
   padding-left: 1.2rem;
 }
+
 .pedido-item select {
   margin-left: 1rem;
+  border-radius: 6px;
+  border: 1px solid #b3c6e0;
+  padding: 0.3rem 0.7rem;
+  font-size: 1rem;
+  background: inherit;
+  color: inherit;
 }
+
 .estadisticas-pedidos {
   display: flex;
   gap: 2rem;
   margin-bottom: 1.5rem;
-  background: #eaf1fb;
-  border-radius: 8px;
+  background: var(--color-nav-light);
+  border-radius: var(--radius);
   padding: 1rem 1.5rem;
+  align-items: center;
+  font-size: 1.1rem;
+  box-shadow: 0 1px 4px #2563eb11;
+  transition: var(--transition);
+}
+.estadisticas-pedidos h4 {
+  margin: 0 1.5rem 0 0;
+  font-size: 1.2em;
 }
 .estadisticas-pedidos p {
   margin: 0;
 }
+
 form {
-  background: #f1f7ff;
-  border-radius: 8px;
+  background: var(--color-muted-light);
+  border-radius: var(--radius);
   padding: 1.2rem 1.5rem;
   margin-bottom: 2rem;
-  box-shadow: 0 1px 4px #2a4d7a11;
+  box-shadow: 0 1px 4px #2563eb11;
+  transition: var(--transition);
 }
 form input, form select {
   margin: 0.3rem 0.7rem 0.3rem 0;
   padding: 0.4rem 0.7rem;
-  border-radius: 4px;
+  border-radius: 6px;
   border: 1px solid #b3c6e0;
   font-size: 1rem;
+  background: inherit;
+  color: inherit;
 }
 form button {
-  background: #2a4d7a;
+  background: var(--color-primary-light);
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   padding: 0.5rem 1.2rem;
   margin: 0.5rem 0.5rem 0.5rem 0;
   cursor: pointer;
@@ -85,29 +118,91 @@ form button {
   transition: background .2s;
 }
 form button:hover {
-  background: #1a2d4a;
+  background: #1741a6;
 }
+
 .nav {
   display: flex;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-  background: #eaf1fb;
-  border-radius: 8px;
-  padding: 1rem 1.5rem;
-  box-shadow: 0 1px 4px #2a4d7a11;
-  width: 95vw;
-  max-width: 1200px;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  background: var(--color-nav-light);
+  border-radius: var(--radius);
+  padding: 1.2rem 2rem;
+  box-shadow: 0 1px 4px #2563eb11;
+  width: 100%;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  align-items: center;
+  font-size: 1.1rem;
+  transition: var(--transition);
 }
 .nav a {
-  color: #2a4d7a;
+  color: var(--color-primary-light);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   padding-bottom: 2px;
   border-bottom: 2px solid transparent;
-  transition: border .2s;
+  transition: border .2s, color .2s;
+  border-radius: 2px;
 }
-.nav a.active {
-  border-bottom: 2px solid #2a4d7a;
+.nav a.active, .nav a[aria-current="page"] {
+  border-bottom: 2px solid var(--color-primary-light);
+  color: var(--color-primary-light);
+}
+.nav a:hover {
+  color: #1741a6;
+}
+
+/* MODO OSCURO */
+:root[data-theme='dark'] body,
+:root[data-theme='dark'] .main-layout {
+  background: var(--color-bg-dark);
+  color: var(--color-text-dark);
+}
+:root[data-theme='dark'] .dashboard {
+  background: var(--color-surface-dark);
+  box-shadow: 0 4px 24px #0008;
+}
+:root[data-theme='dark'] h1,
+:root[data-theme='dark'] h2,
+:root[data-theme='dark'] h3,
+:root[data-theme='dark'] h4,
+:root[data-theme='dark'] h5 {
+  color: var(--color-primary-dark);
+}
+:root[data-theme='dark'] .pedido-item {
+  border: 1px solid var(--color-muted-dark);
+  background: #232837;
+}
+:root[data-theme='dark'] .pedido-item:hover {
+  background: #232837cc;
+  box-shadow: 0 4px 16px #60a5fa22;
+}
+:root[data-theme='dark'] .estadisticas-pedidos {
+  background: var(--color-nav-dark);
+  color: var(--color-text-dark);
+}
+:root[data-theme='dark'] form {
+  background: #232837;
+}
+:root[data-theme='dark'] form button {
+  background: var(--color-primary-dark);
+  color: #232837;
+}
+:root[data-theme='dark'] form button:hover {
+  background: #2563eb;
+  color: #fff;
+}
+:root[data-theme='dark'] .nav {
+  background: var(--color-nav-dark);
+  color: var(--color-text-dark);
+}
+:root[data-theme='dark'] .nav a,
+:root[data-theme='dark'] .nav a.active {
+  color: var(--color-primary-dark);
+  border-bottom: 2px solid var(--color-primary-dark);
+}
+:root[data-theme='dark'] .nav a:hover {
+  color: var(--color-primary-light);
 }
