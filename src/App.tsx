@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
+import { HashRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
 import { useState, useEffect, useRef } from 'react'
 import OrderList from './ListaPedidos.js'
 import type { Pedido } from './ListaPedidos.js'
@@ -178,7 +178,7 @@ function App() {
   const existingProducts = getUniqueProducts(orders)
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="main-layout">
         <NavBar theme={theme} setTheme={setTheme} />
         <Routes>
@@ -195,7 +195,7 @@ function App() {
           />
         </Routes>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
